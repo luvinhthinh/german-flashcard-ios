@@ -7,7 +7,7 @@ class FlashcardData {
         letter: 'A',
         imageUrl: 'assets/images/a.png',
         gifUrl: 'assets/gifs/a.gif',
-        audioUrl: 'audio/a.mp3',
+        audioUrl: 'assets/audio/a.mp3',
         word: 'Apfel',
         pronunciation: 'ah-pfel',
       ),

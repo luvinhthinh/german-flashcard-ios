@@ -25,13 +25,24 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
 
   void _playAudio() async {
     try {
-      await _audioPlayer.play(AssetSource(_flashcards[_currentIndex].audioUrl));
+      // Stop any currently playing audio first
+      await _audioPlayer.stop();
+      
+      // For iOS, we need to use a different approach
+      final audioPath = _flashcards[_currentIndex].audioUrl;
+      print('Attempting to play audio: $audioPath'); // Debug log
+      
+      // Remove 'assets/' prefix for AssetSource
+      final assetPath = audioPath.replaceFirst('assets/', '');
+      print('Asset path: $assetPath'); // Debug log
+      
+      await _audioPlayer.play(AssetSource(assetPath));
     } catch (e) {
       print('Error playing audio: $e');
-      // Show a snackbar or dialog to inform the user
+      // Show a snackbar to inform the user
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Audio file not found')),
+          SnackBar(content: Text('Error playing audio: $e')),
         );
       }
     }
