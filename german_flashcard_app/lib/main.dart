@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/flashcard_screen.dart';
+import 'screens/landing_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,13 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'German Alphabet Flashcards',
+      title: 'Alphabet Learning App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         fontFamily: 'Comic Sans MS', // Child-friendly font
       ),
-      home: const FlashcardScreen(),
+      home: const LandingPage(),
     );
   }
 }
