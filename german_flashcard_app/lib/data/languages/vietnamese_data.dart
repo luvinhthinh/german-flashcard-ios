@@ -24,4 +24,9 @@ class VietnameseData {
       },
     ];
   }
+
+  /// Get all available words (for game purposes)
+  static List<Map<String, dynamic>> getAllWords() {
+    return getLanguageData();
+  }
 } 

@@ -625,4 +625,20 @@ class GermanData {
   static Map<String, int> getWordCounts() {
     return _letterOptions.map((letter, words) => MapEntry(letter, words.length));
   }
+
+  /// Get all available words from all letters (for game purposes)
+  static List<Map<String, dynamic>> getAllWords() {
+    List<Map<String, dynamic>> allWords = [];
+    
+    _letterOptions.forEach((letter, wordOptions) {
+      for (var wordData in wordOptions) {
+        allWords.add({
+          'letter': letter,
+          ...wordData,
+        });
+      }
+    });
+    
+    return allWords;
+  }
 } 

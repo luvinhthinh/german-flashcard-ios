@@ -82,4 +82,18 @@ class LanguageData {
   static void addLanguage(String languageCode, List<Map<String, dynamic>> data) {
     _languageData[languageCode] = data;
   }
+
+  /// Get all available words for a specific language (for game purposes)
+  static List<Map<String, dynamic>> getAllWordsForLanguage(String languageCode) {
+    switch (languageCode) {
+      case 'de':
+        return GermanData.getAllWords();
+      case 'vi':
+        return VietnameseData.getAllWords();
+      case 'en':
+        return EnglishData.getAllWords();
+      default:
+        throw ArgumentError('Language code "$languageCode" not supported');
+    }
+  }
 } 

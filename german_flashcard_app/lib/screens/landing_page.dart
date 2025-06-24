@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flashcard_screen.dart';
+import 'play_page.dart';
 import '../data/language_data.dart';
 
 class LandingPage extends StatefulWidget {
@@ -61,7 +62,14 @@ class _LandingPageState extends State<LandingPage> {
         );
         break;
       case 'play':
-        _showComingSoon('Play Mode');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PlayPage(
+              language: selectedLanguage!,
+            ),
+          ),
+        );
         break;
       case 'review':
         _showComingSoon('Review Mode');
@@ -85,6 +93,19 @@ class _LandingPageState extends State<LandingPage> {
         );
       },
     );
+  }
+
+  String _getButtonText() {
+    switch (selectedMode) {
+      case 'learn':
+        return 'Start Learning';
+      case 'play':
+        return 'Start Playing';
+      case 'review':
+        return 'Start Reviewing';
+      default:
+        return 'Start Learning';
+    }
   }
 
   Widget _buildLanguageCard(Map<String, String> language) {
@@ -267,9 +288,9 @@ class _LandingPageState extends State<LandingPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Text(
-                    'Start Learning',
-                    style: TextStyle(
+                  child: Text(
+                    _getButtonText(),
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
