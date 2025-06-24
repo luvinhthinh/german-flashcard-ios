@@ -55,6 +55,7 @@ class _LandingPageState extends State<LandingPage> {
           MaterialPageRoute(
             builder: (context) => FlashcardScreen(
               language: selectedLanguage!,
+              useRandomizedContent: true,
             ),
           ),
         );

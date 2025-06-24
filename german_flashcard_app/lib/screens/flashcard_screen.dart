@@ -6,8 +6,13 @@ import '../data/language_data.dart';
 
 class FlashcardScreen extends StatefulWidget {
   final String language;
+  final bool useRandomizedContent;
   
-  const FlashcardScreen({Key? key, required this.language}) : super(key: key);
+  const FlashcardScreen({
+    Key? key, 
+    required this.language,
+    this.useRandomizedContent = false,
+  }) : super(key: key);
 
   @override
   _FlashcardScreenState createState() => _FlashcardScreenState();
@@ -23,7 +28,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
   @override
   void initState() {
     super.initState();
-    _flashcards = LanguageData.getFlashcards(widget.language);
+    _flashcards = widget.useRandomizedContent 
+        ? LanguageData.getRandomizedFlashcards(widget.language)
+        : LanguageData.getFlashcards(widget.language);
   }
 
   void _playAudio({bool fromImageTap = false}) async {

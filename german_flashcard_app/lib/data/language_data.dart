@@ -22,14 +22,40 @@ class LanguageData {
     return languageData.map((cardData) => _createFlashcard(cardData, languageCode)).toList();
   }
 
+  /// Generate randomized flashcards for a language (called when user starts learning)
+  static List<Flashcard> getRandomizedFlashcards(String languageCode) {
+    List<Map<String, dynamic>> languageData;
+    
+    // Get randomized data based on language
+    switch (languageCode) {
+      case 'de':
+        languageData = GermanData.getRandomizedLanguageData();
+        break;
+      case 'vi':
+        languageData = VietnameseData.getLanguageData();
+        break;
+      case 'en':
+        languageData = EnglishData.getLanguageData();
+        break;
+      default:
+        throw ArgumentError('Language code "$languageCode" not supported');
+    }
+
+    return languageData.map((cardData) => _createFlashcard(cardData, languageCode)).toList();
+  }
+
   /// Creates a flashcard with proper asset paths based on language code
   static Flashcard _createFlashcard(Map<String, dynamic> cardData, String languageCode) {
     final letter = cardData['letter'].toString().toLowerCase();
     
+    // Use specific image/gif files if available, otherwise fallback to letter-based naming
+    final imageFile = cardData['imageFile'] ?? '$letter.png';
+    final gifFile = cardData['gifFile'] ?? '$letter.gif';
+    
     return Flashcard(
       letter: cardData['letter'],
-      imageUrl: 'assets/$languageCode/images/$letter.png',
-      gifUrl: 'assets/$languageCode/gifs/$letter.gif',
+      imageUrl: 'assets/$languageCode/images/$imageFile',
+      gifUrl: 'assets/$languageCode/gifs/$gifFile',
       audioUrls: (cardData['audioFiles'] as List<String>)
           .map((file) => '$languageCode/audio/$file')
           .toList(),
