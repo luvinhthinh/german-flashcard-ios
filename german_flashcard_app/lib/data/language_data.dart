@@ -52,6 +52,9 @@ class LanguageData {
     final imageFile = cardData['imageFile'] ?? '$letter.png';
     final gifFile = cardData['gifFile'] ?? '$letter.gif';
     
+    final imageUrl = 'assets/$languageCode/images/$imageFile';
+    print('Creating flashcard for ${cardData['word']}: imageUrl = $imageUrl');
+    
     return Flashcard(
       letter: cardData['letter'],
       imageUrl: 'assets/$languageCode/images/$imageFile',

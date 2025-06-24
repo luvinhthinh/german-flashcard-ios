@@ -127,12 +127,14 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
         },
       );
     } else {
+      print('Loading image: ${flashcard.imageUrl}');
       imageWidget = Image.asset(
         flashcard.imageUrl,
         width: imageWidth,
         height: imageHeight,
         fit: BoxFit.contain, // Ensures image fits within bounds
         errorBuilder: (context, error, stackTrace) {
+          print('Error loading image: ${flashcard.imageUrl} - $error');
           return Container(
             width: imageWidth,
             height: imageHeight,
