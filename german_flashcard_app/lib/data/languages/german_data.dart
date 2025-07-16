@@ -87,7 +87,7 @@ class GermanData {
         'pronunciation': 'dee-no-zow-ree-er',
         'imageFile': 'd_dinosaurier.png',
         'gifFile': 'd_dinosaurier.gif',
-        'audioFiles': ['d_soundeffect_de.mp3', 'd_longtext_de.mp3'],
+        'audioFiles': ['d_soundeffect_de.wav', 'd_longtext_de.mp3'],
         'pronunciationAudio': 'd_dinosaurier_pronunciation_de.mp3',
       },
       {
