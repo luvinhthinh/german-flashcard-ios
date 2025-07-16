@@ -483,15 +483,7 @@ class GermanData {
         'gifFile': 'u_uhr.gif',
         'audioFiles': ['u_soundeffect_de.mp3', 'u_longtext_de.mp3'],
         'pronunciationAudio': 'u_pronunciation_de.mp3',
-      },
-      {
-        'word': 'Unke',
-        'pronunciation': 'oon-ke',
-        'imageFile': 'u_unke.png',
-        'gifFile': 'u_unke.gif',
-        'audioFiles': ['u_unke_soundeffect_de.mp3', 'u_unke_longtext_de.mp3'],
-        'pronunciationAudio': 'u_unke_pronunciation_de.mp3',
-      },
+      }
     ],
     'V': [
       {
