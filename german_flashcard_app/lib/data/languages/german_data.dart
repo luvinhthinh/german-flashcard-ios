@@ -305,8 +305,8 @@ class GermanData {
         'pronunciation': 'mows',
         'imageFile': 'm_maus.png',
         'gifFile': 'm_maus.gif',
-        'audioFiles': ['m_soundeffect_de.mp3', 'm_longtext_de.mp3'],
-        'pronunciationAudio': 'm_pronunciation_de.mp3',
+        'audioFiles': ['m_maus_soundeffect_de.mp3', 'm_maus_longtext_de.mp3'],
+        'pronunciationAudio': 'm_maus_pronunciation_de.mp3',
       },
       {
         'word': 'Marienkäfer',
@@ -331,8 +331,8 @@ class GermanData {
         'pronunciation': 'nah-ze',
         'imageFile': 'n_nase.png',
         'gifFile': 'n_nase.gif',
-        'audioFiles': ['n_soundeffect_de.mp3', 'n_longtext_de.mp3'],
-        'pronunciationAudio': 'n_pronunciation_de.mp3',
+        'audioFiles': ['n_nase_soundeffect_de.mp3', 'n_nase_longtext_de.mp3'],
+        'pronunciationAudio': 'n_nase_pronunciation_de.mp3',
       },
       {
         'word': 'Nilpferd',
