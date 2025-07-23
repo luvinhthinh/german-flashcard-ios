@@ -545,8 +545,8 @@ class GermanData {
         'pronunciation': 'yoh-ga',
         'imageFile': 'y_yoga.png',
         'gifFile': 'y_yoga.gif',
-        'audioFiles': ['y_soundeffect_de.mp3', 'y_longtext_de.mp3'],
-        'pronunciationAudio': 'y_pronunciation_de.mp3',
+        'audioFiles': ['y_yoga_soundeffect_de.mp3', 'y_yoga_longtext_de.mp3'],
+        'pronunciationAudio': 'y_yoga_pronunciation_de.mp3',
       },
       {
         'word': 'Yak',
@@ -563,8 +563,8 @@ class GermanData {
         'pronunciation': 'tse-bra',
         'imageFile': 'z_zebra.png',
         'gifFile': 'z_zebra.gif',
-        'audioFiles': ['z_soundeffect_de.mp3', 'z_longtext_de.mp3'],
-        'pronunciationAudio': 'z_pronunciation_de.mp3',
+        'audioFiles': ['z_zebra_soundeffect_de.mp3', 'z_zebra_longtext_de.mp3'],
+        'pronunciationAudio': 'z_zebra_pronunciation_de.mp3',
       },
       {
         'word': 'Ziege',
